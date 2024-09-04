@@ -1,18 +1,29 @@
 #!/usr/bin/python3
-import sys  # Importing the sys module to work with command-line arguments
+import sys
 
 def factorial(n):
-    # If n is 0, return 1 because the factorial of 0 is 1
+    """
+    Calculate the factorial of a non-negative integer using recursion.
+
+    Function Description:
+    This function computes the factorial of the input integer `n` recursively.
+    The factorial of a non-negative integer `n` is defined as:
+    n! = n * (n-1) * (n-2) * ... * 1
+    with the special case that 0! = 1.
+
+    Parameters:
+    n (int): A non-negative integer for which the factorial is to be computed.
+
+    Returns:
+    int: The factorial of the input integer `n`.
+    """
     if n == 0:
         return 1
     else:
-        # Otherwise, return n multiplied by the factorial of (n-1)
-        # This is a recursive function call
-        return n * factorial(n - 1)
+        return n * factorial(n-1)
 
-# Convert the first command-line argument to an integer
-# and store the result of the factorial function in 'f'
+# Retrieve the integer from the command-line argument
 f = factorial(int(sys.argv[1]))
 
-# Print the result of the factorial calculation
+# Print the result to the console
 print(f)
